@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Foods - Enter Price</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Italian Foods - Enter Price Details</h1>
+
+        <!-- Food Images and Descriptions -->
+        <div class="food-row">
+            <!-- Pizza -->
+            <div class="food-item">
+                <img src="pizza.jpg" alt="Pizza">
+                <div class="food-details">
+                    <h2>Pizza</h2>
+                    <p>Pizza is a beloved Italian dish with a rich history, originating from Naples, Italy. It features a round, flat base of dough topped with tomato sauce, cheese, and various toppings.</p>
+                </div>
+            </div>
+
+            <!-- Spaghetti -->
+            <div class="food-item">
+                <img src="spaghetti.jpg" alt="Spaghetti">
+                <div class="food-details">
+                    <h2>Spaghetti</h2>
+                    <p>Spaghetti is a long, thin pasta made from durum wheat semolina, usually served with tomato-based sauces and various toppings.</p>
+                </div>
+            </div>
+
+            <!-- Lasagna -->
+            <div class="food-item">
+                <img src="lasagna.jpg" alt="Lasagna">
+                <div class="food-details">
+                    <h2>Lasagna</h2>
+                    <p>Lasagna is a layered pasta dish, traditionally made with sheets of pasta, meat, tomato sauce, béchamel, and cheese.</p>
+                </div>
+            </div>
+
+            <!-- Risotto -->
+            <div class="food-item">
+                <img src="risotto.jpg" alt="Risotto">
+                <div class="food-details">
+                    <h2>Risotto</h2>
+                    <p>Risotto is a classic Italian dish made with Arborio rice, cooked to creamy perfection with broth and various ingredients.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form to Submit Data -->
+        <div class="form-section">
+            <h2>Enter Food Price Details</h2>
+            <form action="save_price.php" method="POST">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="food-type">Food Type:</label>
+                <select id="food-type" name="food-type" required>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Spaghetti">Spaghetti</option>
+                    <option value="Lasagna">Lasagna</option>
+                    <option value="Risotto">Risotto</option>
+                </select>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <?php
+            // Display success or error message after form submission
+            if (isset($message)) {
+                echo "<div class='message'>$message</div>";
+            }
+            ?>
+        </div>
+    </div>
+
+</body>
+</html>
